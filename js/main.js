@@ -162,8 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Enviar consulta por WhatsApp
   bookingForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const unit = unitSelect ? unitSelect.value : 'El Domo de la Selva';
-    const guests = guestsSelect ? guestsSelect.value : '2 personas';
+    const rawUnit = unitSelect ? unitSelect.value : 'El Domo de la Selva';
+    const unit = rawUnit.replace(/\s*\(.*?\)/, '').trim();
     const checkin = formatDateDM(checkinInput?.value);
     const checkout = formatDateDM(checkoutInput?.value);
 
@@ -171,11 +171,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const outDate = new Date(checkoutInput.value);
     const diffDays = Math.max(1, Math.ceil((outDate - inDate) / (1000 * 60 * 60 * 24)));
 
-    const message = `¡Hola! 🍃 Vimos la web de Cabañas de la Selva y queremos consultar disponibilidad:\n\n` +
-      `🏡 *Alojamiento:* ${unit}\n` +
-      `📅 *Fechas:* Entrada ${checkin} → Salida ${checkout} (${diffDays} ${diffDays === 1 ? 'noche' : 'noches'})\n` +
-      `👥 *Huéspedes:* ${guests}\n\n` +
-      `¿Tienen lugar para estas fechas y qué tarifa tiene la estadía? ¡Muchas gracias!`;
+    const message = `Hola! Quería consultar disponibilidad en Cabañas de la Selva:\n\n` +
+      `- Alojamiento: ${unit}\n` +
+      `- Fechas: ${checkin} al ${checkout} (${diffDays} ${diffDays === 1 ? 'noche' : 'noches'})\n\n` +
+      `¿Tienen lugar y cuál es la tarifa? Gracias!`;
 
     const encoded = encodeURIComponent(message);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, '_blank');
@@ -202,8 +201,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Sincronizar el selector del buscador de arriba
       if (unitSelect) {
-        if (targetUnit === 'domo') unitSelect.value = 'El Domo de la Selva (Parejas)';
-        if (targetUnit === 'petaca') unitSelect.value = 'Casita La Petaca (Familias/Grupos)';
+        if (targetUnit === 'domo') unitSelect.value = 'El Domo de la Selva';
+        if (targetUnit === 'petaca') unitSelect.value = 'Casita La Petaca';
       }
     });
   });

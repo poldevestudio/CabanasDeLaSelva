@@ -244,20 +244,47 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* -------------------------------------------------------------
-     5. Barra Flotante Mobile (Sticky Dock)
+     4b. Logística Fluvial Desplegables Interactivas
   ------------------------------------------------------------- */
-  const mobileDock = document.querySelector('.mobile-sticky-dock');
-  const heroSection = document.querySelector('.hero-section');
-
-  if (mobileDock && heroSection) {
-    window.addEventListener('scroll', () => {
-      const heroBottom = heroSection.getBoundingClientRect().bottom;
-      if (heroBottom < 100) {
-        mobileDock.classList.add('visible');
-      } else {
-        mobileDock.classList.remove('visible');
+  const logisticsHeaders = document.querySelectorAll('.logistics-header');
+  logisticsHeaders.forEach(header => {
+    const card = header.closest('.logistics-card');
+    const toggleAction = () => {
+      const isExpanded = card.classList.contains('active');
+      card.classList.toggle('active');
+      header.setAttribute('aria-expanded', !isExpanded);
+      const textSpan = header.querySelector('.logistics-toggle-text');
+      if (textSpan) {
+        textSpan.textContent = !isExpanded ? 'Ocultar' : 'Ver info';
       }
-    }, { passive: true });
+    };
+
+    header.addEventListener('click', toggleAction);
+    header.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleAction();
+      }
+    });
+  });
+
+  /* -------------------------------------------------------------
+     5. Botón Flotante Discreto de WhatsApp
+  ------------------------------------------------------------- */
+  const whatsappFloat = document.querySelector('.whatsapp-float-btn');
+
+  if (whatsappFloat) {
+    const handleScrollWhatsapp = () => {
+      // Aparece y queda fijo cuando el usuario scrollea hacia abajo (> 120px)
+      if (window.scrollY > 120) {
+        whatsappFloat.classList.add('visible');
+      } else {
+        whatsappFloat.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollWhatsapp, { passive: true });
+    handleScrollWhatsapp();
   }
 
   /* -------------------------------------------------------------

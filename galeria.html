@@ -26,7 +26,7 @@
     .gallery-hero {
       background-color: var(--color-primary-dark);
       color: #fff;
-      padding: clamp(3rem, 6vw, 4.5rem) 0 2.5rem;
+      padding: calc(var(--header-height) + 2.5rem) 0 2.5rem;
       text-align: center;
       position: relative;
     }
@@ -148,8 +148,8 @@
       </nav>
 
       <div class="header-actions">
-        <a href="https://wa.me/5491168408623?text=¡Hola!%20Vimos%20la%20galería%20y%20queremos%20consultar%20disponibilidad" target="_blank" rel="noopener" class="btn btn-whatsapp" style="padding: 0.65rem 1.25rem;">
-          Consultar Fechas
+        <a href="index.html" class="btn btn-outline" style="padding: 0.42rem 0.95rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em;">
+          ← ATRÁS
         </a>
       </div>
     </div>
@@ -174,8 +174,7 @@
       <button class="filter-btn active" data-filter="all">Todas las Fotos</button>
       <button class="filter-btn" data-filter="domo">El Domo Geodésico</button>
       <button class="filter-btn" data-filter="petaca">Casita La Petaca</button>
-      <button class="filter-btn" data-filter="rio">Río, Muelle & Canoas</button>
-      <button class="filter-btn" data-filter="noche">Fogonero & Noche</button>
+      <button class="filter-btn" data-filter="rio">Parque & Naturaleza</button>
     </div>
 
     <div class="gallery-masonry" id="gallery-grid">
@@ -251,75 +250,17 @@
         </div>
       </a>
 
-      <!-- Item 9: Canoa en el Río -->
-      <a href="images/canoa-rio-experiencia.jpg" class="gallery-card" data-cat="rio" data-lightbox>
-        <img src="images/canoa-rio-experiencia.jpg" alt="Remando en canoa canadiense por el Arroyo Segunda Hermana" loading="lazy">
-        <div class="gallery-card-overlay">
-          <span class="gallery-card-cat">Río & Canoas</span>
-          <h3 class="gallery-card-title">Navegación libre en canoa canadiense</h3>
-        </div>
-      </a>
-
-      <!-- Item 10: Muelle y Río Real -->
-      <a href="images/rio-muelle-selva-real.jpg" class="gallery-card" data-cat="rio" data-lightbox>
-        <img src="images/rio-muelle-selva-real.jpg" alt="Muelle privado y vegetación de selva" loading="lazy">
-        <div class="gallery-card-overlay">
-          <span class="gallery-card-cat">Río & Canoas</span>
-          <h3 class="gallery-card-title">Muelle privado sobre el arroyo calmo</h3>
-        </div>
-      </a>
-
-      <!-- Item 11: Canoas en el Muelle -->
-      <a href="images/canoas-muelle.jpg" class="gallery-card" data-cat="rio" data-lightbox>
-        <img src="images/canoas-muelle.jpg" alt="Canoas amarradas en el muelle de madera" loading="lazy">
-        <div class="gallery-card-overlay">
-          <span class="gallery-card-cat">Río & Canoas</span>
-          <h3 class="gallery-card-title">Embarcaciones listas para usar con salvavidas</h3>
-        </div>
-      </a>
-
-      <!-- Item 12: Muelle al Atardecer -->
-      <a href="images/muelle-atardecer.jpg" class="gallery-card" data-cat="rio" data-lightbox>
-        <img src="images/muelle-atardecer.jpg" alt="Atardecer dorado sobre las aguas del Delta" loading="lazy">
-        <div class="gallery-card-overlay">
-          <span class="gallery-card-cat">Río & Canoas</span>
-          <h3 class="gallery-card-title">Tardes de mate y contemplación en el muelle</h3>
-        </div>
-      </a>
-
-      <!-- Item 13: Fogonero Nocturno -->
-      <a href="images/fogonero-nocturno.jpg" class="gallery-card" data-cat="noche" data-lightbox>
-        <img src="images/fogonero-nocturno.jpg" alt="Fogonero a leña nocturno" loading="lazy">
-        <div class="gallery-card-overlay">
-          <span class="gallery-card-cat">Fogonero & Noche</span>
-          <h3 class="gallery-card-title">Fuego a leña y charlas bajo las estrellas</h3>
-        </div>
-      </a>
-
-      <!-- Item 14: Fogonero Cielo Estrellado -->
-      <a href="images/fogonero-estrellas.jpg" class="gallery-card" data-cat="noche" data-lightbox>
-        <img src="images/fogonero-estrellas.jpg" alt="Noche mágica con brasas encendidas" loading="lazy">
-        <div class="gallery-card-overlay">
-          <span class="gallery-card-cat">Fogonero & Noche</span>
-          <h3 class="gallery-card-title">Noche isleña sin contaminación lumínica</h3>
-        </div>
-      </a>
-
-      <!-- Item 15: Senderos del Parque -->
+      <!-- Item 9: Senderos del Parque -->
       <a href="images/selva-parque-senderos.jpg" class="gallery-card" data-cat="rio" data-lightbox>
         <img src="images/selva-parque-senderos.jpg" alt="Senderos y vegetación del monte de 1 hectárea" loading="lazy">
         <div class="gallery-card-overlay">
-          <span class="gallery-card-cat">Río & Canoas</span>
+          <span class="gallery-card-cat">Parque & Naturaleza</span>
           <h3 class="gallery-card-title">Más de 1 hectárea de parque silvestre protegido</h3>
         </div>
       </a>
     </div>
 
-    <div style="text-align: center; margin-bottom: 4rem;">
-      <a href="index.html#reservas" class="btn btn-whatsapp" style="font-size: 1rem; padding: 0.95rem 2rem;">
-        ¿Te gustó lo que viste? Consultar Disponibilidad por WhatsApp →
-      </a>
-    </div>
+
   </main>
 
   <!-- Footer -->
@@ -329,6 +270,13 @@
       <span class="ruco-credit">Diseño por <strong>Ruco</strong> (ruco.ar)</span>
     </div>
   </footer>
+
+  <!-- Botón Flotante Discreto WhatsApp -->
+  <a href="https://wa.me/5491168408623?text=¡Hola!%20Vimos%20la%20web%20y%20queremos%20consultar%20disponibilidad" target="_blank" rel="noopener" class="whatsapp-float-btn" aria-label="Consultar por WhatsApp" title="Consultar por WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.477-.15-.678.15-.201.3-.778.98-.954 1.18-.175.201-.351.226-.652.075-1.928-.966-3.193-2.189-4.469-4.38-.337-.58-.035-.895.116-1.045.135-.136.3-.351.451-.527.151-.176.201-.301.301-.502.101-.2.05-.376-.025-.526-.075-.151-.678-1.633-.929-2.235-.244-.587-.492-.507-.677-.516-.176-.008-.376-.01-.577-.01-.201 0-.527.075-.803.376-.276.3-1.054 1.03-1.054 2.511 0 1.481 1.079 2.91 1.23 3.111.15.201 2.124 3.243 5.145 4.549.718.311 1.279.497 1.716.636.722.23 1.378.197 1.897.12.578-.087 1.78-.727 2.031-1.429.251-.702.251-1.303.176-1.429-.076-.126-.277-.201-.578-.352zM12 21.82c-1.748 0-3.46-.46-4.966-1.332l-.356-.211-3.69 1.196 1.218-3.597-.232-.37C3.045 15.952 2.5 14.011 2.5 12c0-5.238 4.262-9.5 9.5-9.5 2.538 0 4.924.989 6.72 2.784A9.444 9.444 0 0 1 21.5 12c0 5.238-4.262 9.82-9.5 9.82zm8.411-17.91A11.89 11.89 0 0 0 12 .08C5.424.08.08 5.424.08 12c0 2.1.548 4.148 1.589 5.961L0 24l6.19-1.624C7.94 23.35 9.947 23.92 12 23.92c6.576 0 11.92-5.344 11.92-11.92 0-3.184-1.24-6.177-3.509-8.41z"/>
+    </svg>
+  </a>
 
   <!-- Lightbox Modal -->
   <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-hidden="true">

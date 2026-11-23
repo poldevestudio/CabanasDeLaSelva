@@ -99,16 +99,15 @@
           <span>@cabanasdelaselvatigre</span>
         </a>
         <a href="#reservas" class="btn btn-accent">RESERVAR</a>
+        <!-- Menú Hamburguesa Mobile -->
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <div class="menu-toggle-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
       </div>
-
-      <!-- Menú Hamburguesa Mobile -->
-      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <div class="menu-toggle-bars">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
     </div>
   </header>
 
@@ -241,8 +240,6 @@
         </form>
         <div class="booking-guarantee">
           <span>✓ Respuesta rápida por sus dueños</span>
-          <span>✓ Seña bancaria por transferencia en pesos</span>
-          <span>✓ Asesoramiento fluvial para tu llegada</span>
         </div>
       </div>
     </div>
@@ -327,16 +324,6 @@
               </div>
             </div>
           </div>
-
-          <div class="unit-cta-block">
-            <div class="unit-price-note">
-              <span>Tarifa por noche en base doble</span>
-              <strong>Consultar paquete fin de semana</strong>
-            </div>
-            <a href="https://wa.me/5491168408623?text=¡Hola!%20Queremos%20consultar%20disponibilidad%20y%20precios%20para%20El%20Domo%20de%20la%20Selva" target="_blank" rel="noopener" class="btn btn-whatsapp">
-              Consultar por WhatsApp →
-            </a>
-          </div>
         </div>
       </article>
 
@@ -398,16 +385,6 @@
               </div>
             </div>
           </div>
-
-          <div class="unit-cta-block">
-            <div class="unit-price-note">
-              <span>Tarifa familiar según cantidad de huéspedes</span>
-              <strong>Capacidad 4 a 5 personas</strong>
-            </div>
-            <a href="https://wa.me/5491168408623?text=¡Hola!%20Queremos%20consultar%20por%20la%20Casita%20La%20Petaca%20para%20familias" target="_blank" rel="noopener" class="btn btn-whatsapp">
-              Consultar por WhatsApp →
-            </a>
-          </div>
         </div>
       </article>
     </div>
@@ -415,7 +392,7 @@
 
   <!-- 6. Experiencias & Vivencias de Selva -->
   <section class="experiences-section" id="experiencias">
-    <div class="container">
+    <div class="container exp-content-wrap">
       <div class="section-header-center">
         <span class="section-tag">Conexión con el Entorno</span>
         <h2 class="section-title">La Experiencia en la Selva del Paraná</h2>
@@ -426,13 +403,6 @@
 
       <!-- Narrativa Editorial de la Experiencia (Quiet Luxury) -->
       <div class="exp-editorial-wrap">
-        <div class="exp-editorial-quote">
-          <p class="quote-text">
-            “A solo 90 minutos del Obelisco, el Arroyo Segunda Hermana te sumerge en una naturaleza virgen y silenciosa. La magia existe, está en nosotros y a veces solo hace falta alejarse del cemento para recordarla.”
-          </p>
-          <span class="quote-author">— Cabañas de la Selva · Tigre</span>
-        </div>
-
         <div class="exp-editorial-story">
           <div class="exp-story-col">
             <h3 class="story-heading">El Ritmo Propio de la Isla</h3>
@@ -504,127 +474,130 @@
       <div class="logistics-grid">
         <!-- Opción 1: Lancha Colectiva -->
         <div class="logistics-card">
-          <div class="logistics-header">
-            <div class="logistics-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M4 17l2-5 6-3 6 3 2 5M12 2v7"/></svg>
+          <div class="logistics-header" role="button" tabindex="0" aria-expanded="false" aria-label="Desplegar detalles de Lancha Colectiva">
+            <div class="logistics-header-info">
+              <div class="logistics-icon-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M4 17l2-5 6-3 6 3 2 5M12 2v7"/></svg>
+              </div>
+              <div>
+                <h3 class="logistics-name">Lancha Colectiva Interisleña</h3>
+                <span class="logistics-time">~55 Minutos · Económica</span>
+              </div>
             </div>
-            <div>
-              <h3 class="logistics-name">Lancha Colectiva Interisleña</h3>
-              <span class="logistics-time">~55 Minutos · Económica</span>
+            <div class="logistics-toggle-pill">
+              <span class="logistics-toggle-text">Ver info</span>
+              <svg class="logistics-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
           </div>
-          <p class="logistics-desc">
-            La forma clásica y pintoresca. Salís desde la <strong>Estación Fluvial de Tigre</strong> (Rampa Interisleña) con destino a <em>Río Capitán y Arroyo Segunda Hermana</em>.
-          </p>
-          <ul class="logistics-steps">
-            <li>Bajada directa en el muelle de Cabañas de la Selva.</li>
-            <li>Se abona con tarjeta SUBE en la boletería o abordo.</li>
-            <li>Frecuencias diarias regulares por la mañana y tarde.</li>
-          </ul>
+          <div class="logistics-collapse">
+            <div class="logistics-content-inner">
+              <p class="logistics-desc">
+                La forma clásica y pintoresca. Salís desde la <strong>Estación Fluvial de Tigre</strong> (Rampa Interisleña) con destino a <em>Río Capitán y Arroyo Segunda Hermana</em>.
+              </p>
+              <ul class="logistics-steps">
+                <li>Bajada directa en el muelle de Cabañas de la Selva.</li>
+                <li>Se abona con tarjeta SUBE en la boletería o abordo.</li>
+                <li>Frecuencias diarias regulares por la mañana y tarde.</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <!-- Opción 2: Lancha Taxi Náutica -->
         <div class="logistics-card">
-          <div class="logistics-header">
-            <div class="logistics-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <div class="logistics-header" role="button" tabindex="0" aria-expanded="false" aria-label="Desplegar detalles de Lancha Taxi">
+            <div class="logistics-header-info">
+              <div class="logistics-icon-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <div>
+                <h3 class="logistics-name">Lancha Taxi (Privada Express)</h3>
+                <span class="logistics-time">25-30 Minutos · Directo</span>
+              </div>
             </div>
-            <div>
-              <h3 class="logistics-name">Lancha Taxi (Privada Express)</h3>
-              <span class="logistics-time">25-30 Minutos · Directo</span>
+            <div class="logistics-toggle-pill">
+              <span class="logistics-toggle-text">Ver info</span>
+              <svg class="logistics-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
           </div>
-          <p class="logistics-desc">
-            Servicio privado puerta a muelle. Salís en el horario exacto que elijas desde Tigre o San Fernando sin paradas intermedias.
-          </p>
-          <ul class="logistics-steps">
-            <li>Flexibilidad total de horarios (incluso nocturnos).</li>
-            <li>Te facilitamos los contactos directos de capitanes de lancha taxi de confianza.</li>
-            <li>Ideal si viajás con equipaje o compras grandes.</li>
-          </ul>
+          <div class="logistics-collapse">
+            <div class="logistics-content-inner">
+              <p class="logistics-desc">
+                Servicio privado puerta a muelle. Salís en el horario exacto que elijas desde Tigre o San Fernando sin paradas intermedias.
+              </p>
+              <ul class="logistics-steps">
+                <li>Flexibilidad total de horarios (incluso nocturnos).</li>
+                <li>Te facilitamos los contactos directos de capitanes de lancha taxi de confianza.</li>
+                <li>Ideal si viajás con equipaje o compras grandes.</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <!-- Opción 3: Embarcación Propia -->
         <div class="logistics-card">
-          <div class="logistics-header">
-            <div class="logistics-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
+          <div class="logistics-header" role="button" tabindex="0" aria-expanded="false" aria-label="Desplegar detalles de Embarcación Propia">
+            <div class="logistics-header-info">
+              <div class="logistics-icon-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
+              </div>
+              <div>
+                <h3 class="logistics-name">En tu Propia Embarcación</h3>
+                <span class="logistics-time">Amarra de Cortesía</span>
+              </div>
             </div>
-            <div>
-              <h3 class="logistics-name">En tu Propia Embarcación</h3>
-              <span class="logistics-time">Amarra de Cortesía</span>
+            <div class="logistics-toggle-pill">
+              <span class="logistics-toggle-text">Ver info</span>
+              <svg class="logistics-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
           </div>
-          <p class="logistics-desc">
-            Si tenés lancha, tracker o semirrígido, contás con amarra segura en nuestro muelle propio con calado profundo todo el año.
-          </p>
-          <ul class="logistics-steps">
-            <li>Navegás por Río Luján, Carapachay, Capitán y Segunda Hermana.</li>
-            <li>Muelle de madera resistente con bitas y escaleras náuticas.</li>
-            <li>Arroyo protegido sin oleaje de embarcaciones mayores.</li>
-          </ul>
+          <div class="logistics-collapse">
+            <div class="logistics-content-inner">
+              <p class="logistics-desc">
+                Si tenés lancha, tracker o semirrígido, contás con amarra segura en nuestro muelle propio con calado profundo todo el año.
+              </p>
+              <ul class="logistics-steps">
+                <li>Navegás por Río Luján, Carapachay, Capitán y Segunda Hermana.</li>
+                <li>Muelle de madera resistente con bitas y escaleras náuticas.</li>
+                <li>Arroyo protegido sin oleaje de embarcaciones mayores.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Tarjeta de Mapa y Coordenadas -->
       <div class="map-card">
         <div>
-          <h3>Ubicación Exacta en el Delta</h3>
+          <div class="map-btn-wrap">
+            <a href="https://maps.google.com/?q=-34.322688,-58.574849" target="_blank" rel="noopener" class="btn btn-navegar">
+              Navegar ↗
+            </a>
+          </div>
           <p>
-            Arroyo Segunda Hermana S/N, a solo 400 metros de la desembocadura en el Río Capitán. Una zona de aguas tranquilas, selva en galería y entorno seguro.
+            Arroyo Segunda Hermana, a 400 metros de la desembocadura en el Río Capitán.
           </p>
           <div class="map-coordinates">
             <span>GPS: -34.322688, -58.574849</span>
           </div>
-          <div class="map-actions">
-            <a href="https://maps.google.com/?q=-34.322688,-58.574849" target="_blank" rel="noopener" class="btn btn-accent">
-              Abrir en Google Maps ↗
-            </a>
-            <a href="https://wa.me/5491168408623?text=Hola!%20Me%20podr%C3%ADan%20indicar%20los%20horarios%20de%20lancha%20para%20este%20fin%20de%20semana?" target="_blank" rel="noopener" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.3);">
-              Consultar Horarios por WhatsApp
-            </a>
-          </div>
         </div>
         <div class="map-visual-box">
-          <img src="images/mapa-arroyo-ilustrado.jpg" alt="Mapa del Arroyo Segunda Hermana y Río Capitán" loading="lazy">
+          <iframe 
+            title="Ubicación de Cabañas de la Selva en Google Maps"
+            src="https://maps.google.com/maps?q=-34.322688,-58.574849&amp;hl=es&amp;z=14&amp;output=embed" 
+            width="100%" 
+            height="280" 
+            style="border:0; width:100%; height:280px; display:block;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 8. Galería de Fotos Reales (Preview) -->
-  <section class="gallery-preview-section" style="padding: clamp(3rem, 6vw, 4rem) 0; background: var(--color-bg-surface);">
-    <div class="container">
-      <div class="section-header-center" style="margin-bottom: 2rem;">
-        <span class="section-tag">Registro Visual</span>
-        <h2 class="section-title">Fotografías 100% Reales de la Isla</h2>
-        <p class="section-subtitle">Sin fotos de stock ni filtros engañosos. Lo que ves es exactamente la paz que vas a encontrar al llegar.</p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
-        <a href="images/domo-geodesico-vista-real.jpg" data-lightbox style="height: 220px; border-radius: var(--radius-md); overflow: hidden; display: block;">
-          <img src="images/domo-geodesico-vista-real.jpg" alt="Interior con ventanales del Domo geodésico" style="width: 100%; height: 100%; object-fit: cover;">
-        </a>
-        <a href="images/domo-cama-sommier-real.jpg" data-lightbox style="height: 220px; border-radius: var(--radius-md); overflow: hidden; display: block;">
-          <img src="images/domo-cama-sommier-real.jpg" alt="Habitación domo real con mosquitero" style="width: 100%; height: 100%; object-fit: cover;">
-        </a>
-        <a href="images/rio-muelle-selva-real.jpg" data-lightbox style="height: 220px; border-radius: var(--radius-md); overflow: hidden; display: block;">
-          <img src="images/rio-muelle-selva-real.jpg" alt="Río y muelle privado" style="width: 100%; height: 100%; object-fit: cover;">
-        </a>
-        <a href="images/petaca-cabana-fachada.jpg" data-lightbox style="height: 220px; border-radius: var(--radius-md); overflow: hidden; display: block;">
-          <img src="images/petaca-cabana-fachada.jpg" alt="Casita La Petaca fachada" style="width: 100%; height: 100%; object-fit: cover;">
-        </a>
-      </div>
-
-      <div style="text-align: center;">
-        <a href="galeria.html" class="btn btn-outline" style="border-width: 2px;">
-          Ver Galería Completa de Fotos (20+ fotos) →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. FAQ Acordeón de Preguntas Frecuentes -->
+  <!-- 8. FAQ Acordeón de Preguntas Frecuentes -->
   <section class="faq-section" id="faq">
     <div class="container">
       <div class="section-header-center">
@@ -744,18 +717,7 @@
     </div>
   </footer>
 
-  <!-- 12. Barra Flotante Mobile (Sticky Dock) -->
-  <aside class="mobile-sticky-dock" aria-label="Reserva rápida">
-    <div class="dock-info">
-      <span class="dock-title">Cabañas de la Selva</span>
-      <span class="dock-sub">Domo & Cabaña · Delta</span>
-    </div>
-    <a href="https://wa.me/5491168408623?text=¡Hola!%20Vimos%20la%20web%20y%20queremos%20consultar%20disponibilidad%20para%20este%20finde" target="_blank" rel="noopener" class="btn btn-whatsapp dock-btn">
-      Consultar por WhatsApp
-    </a>
-  </aside>
-
-  <!-- 13. Lightbox Modal -->
+  <!-- 12. Lightbox Modal -->
   <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-hidden="true">
     <div class="lightbox-content">
       <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar foto">&times;</button>

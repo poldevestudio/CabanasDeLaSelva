@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Fotos Reales · Domo de la Selva & Casita La Petaca | Delta de Tigre</title>
+  
+  <meta name="description" content="Recorrido fotográfico completo de Cabañas de la Selva: El Domo geodésico, Casita La Petaca, muelle privado, canoas sobre el Arroyo Segunda Hermana y fogonero bajo las estrellas.">
+  <meta name="author" content="Ruco · ruco.ar">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Galería de Fotos Reales · Cabañas de la Selva Tigre">
+  <meta property="og:description" content="Fotografías 100% auténticas del Domo de la Selva, Casita La Petaca y la vida en la isla.">
+  <meta property="og:image" content="images/hero-domoselva.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%230b1f16' d='M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14 14-6.3 14-14S23.7 2 16 2zm1 4.2c3.5 1.2 6.5 4.5 7.2 8.5H17V6.2zm-2 0V15H7.8C8.5 11 11.5 7.4 15 6.2zM7.5 17H15v8.8C11.5 24.6 8.5 21 7.5 17zm9.5 8.8V17h7.5c-1 4-4 7.6-7.5 8.8z'/%3E%3C/svg%3E">
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .gallery-hero {
+      background-color: var(--color-primary-dark);
+      color: #fff;
+      padding: clamp(3rem, 6vw, 4.5rem) 0 2.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .gallery-filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 2rem 0 3rem;
+    }
+    .filter-btn {
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: var(--color-bg-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-primary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+    .gallery-masonry {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+    @media (min-width: 640px) {
+      .gallery-masonry {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .gallery-masonry {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .gallery-card {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--color-bg-alt);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+      display: block;
+      height: 280px;
+    }
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    .gallery-card:hover img {
+      transform: scale(1.05);
+    }
+    .gallery-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11, 31, 22, 0.85) 0%, transparent 60%);
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem;
+      color: #fff;
+      transition: opacity var(--transition-fast);
+    }
+    .gallery-card:hover .gallery-card-overlay {
+      opacity: 1;
+    }
+    .gallery-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .gallery-card-cat {
+      font-size: 0.75rem;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Fijo -->
+  <header class="site-header scrolled">
+    <div class="container header-container">
+      <a href="index.html" class="brand" aria-label="Volver al inicio">
+        <svg class="brand-icon-svg" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2" stroke-opacity="0.25"/>
+          <path d="M16 46C16 32 23 20 32 20C41 20 48 32 48 46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M22 28L42 38" stroke="var(--color-accent)" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M42 28L22 38" stroke="var(--color-accent)" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="32" cy="20" r="2.5" fill="var(--color-accent)"/>
+          <path d="M12 48H52" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-subtitle">Cabañas de la Selva · Tigre</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html#casitas" class="nav-link">Cabañas</a>
+        <a href="index.html#experiencias" class="nav-link">Experiencias</a>
+        <a href="galeria.html" class="nav-link active">Fotos</a>
+        <a href="index.html#como-llegar" class="nav-link">Llegar</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/5491168408623?text=¡Hola!%20Vimos%20la%20galería%20y%20queremos%20consultar%20disponibilidad" target="_blank" rel="noopener" class="btn btn-whatsapp" style="padding: 0.65rem 1.25rem;">
+          Consultar Fechas
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Galería -->
+  <section class="gallery-hero">
+    <div class="container">
+      <span class="section-tag" style="justify-content: center; color: var(--color-accent);">Registro Visual Auténtico</span>
+      <h1 style="color: #fff; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.75rem;">
+        Galería de Fotografías Reales
+      </h1>
+      <p style="color: rgba(248, 246, 240, 0.85); max-width: 650px; margin: 0 auto; font-size: 1.05rem;">
+        El Domo de la Selva, la Casita La Petaca, las canoas canadienses, el muelle y los rincones secretos del Arroyo Segunda Hermana.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filtros & Grid de Fotos -->
+  <main class="container" style="padding-top: 2rem;">
+    <div class="gallery-filter-bar">
+      <button class="filter-btn active" data-filter="all">Todas las Fotos</button>
+      <button class="filter-btn" data-filter="domo">El Domo Geodésico</button>
+      <button class="filter-btn" data-filter="petaca">Casita La Petaca</button>
+      <button class="filter-btn" data-filter="rio">Río, Muelle & Canoas</button>
+      <button class="filter-btn" data-filter="noche">Fogonero & Noche</button>
+    </div>
+
+    <div class="gallery-masonry" id="gallery-grid">
+      <!-- Item 1: Domo Vista Interior Real -->
+      <a href="images/domo-geodesico-vista-real.jpg" class="gallery-card" data-cat="domo" data-lightbox>
+        <img src="images/domo-geodesico-vista-real.jpg" alt="Interior con ventanales triangulares del Domo geodésico" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">El Domo Geodésico</span>
+          <h3 class="gallery-card-title">Ventanales geométricos con vista al monte virgen</h3>
+        </div>
+      </a>
+
+      <!-- Item 2: Domo Cama Real -->
+      <a href="images/domo-cama-sommier-real.jpg" class="gallery-card" data-cat="domo" data-lightbox>
+        <img src="images/domo-cama-sommier-real.jpg" alt="Habitación domo con sommier y mosquitero" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">El Domo Geodésico</span>
+          <h3 class="gallery-card-title">Cama matrimonial cálida con mosquitero</h3>
+        </div>
+      </a>
+
+      <!-- Item 3: Domo Baño Cielo -->
+      <a href="images/domo-bano-cielo.jpg" class="gallery-card" data-cat="domo" data-lightbox>
+        <img src="images/domo-bano-cielo.jpg" alt="Baño con techo transparente cenital" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">El Domo Geodésico</span>
+          <h3 class="gallery-card-title">Baño con techo transparente y vista al cielo</h3>
+        </div>
+      </a>
+
+      <!-- Item 4: Domo Cocina Deck -->
+      <a href="images/domo-cocina-deck.jpg" class="gallery-card" data-cat="domo" data-lightbox>
+        <img src="images/domo-cocina-deck.jpg" alt="Cocina-comedor vidriada con vista al monte" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">El Domo Geodésico</span>
+          <h3 class="gallery-card-title">Cocina vidriada y deck privado</h3>
+        </div>
+      </a>
+
+      <!-- Item 5: Casita La Petaca Fachada -->
+      <a href="images/petaca-cabana-fachada.jpg" class="gallery-card" data-cat="petaca" data-lightbox>
+        <img src="images/petaca-cabana-fachada.jpg" alt="Casita isleña tradicional sobre pilotes" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">Casita La Petaca</span>
+          <h3 class="gallery-card-title">Fachada de madera y arquitectura isleña</h3>
+        </div>
+      </a>
+
+      <!-- Item 6: La Petaca Living -->
+      <a href="images/petaca-living-madera.jpg" class="gallery-card" data-cat="petaca" data-lightbox>
+        <img src="images/petaca-living-madera.jpg" alt="Living comedor de La Petaca" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">Casita La Petaca</span>
+          <h3 class="gallery-card-title">Salón estar luminoso con vista al jardín y río</h3>
+        </div>
+      </a>
+
+      <!-- Item 7: La Petaca Dormitorio -->
+      <a href="images/petaca-dormitorio-matrimonial.jpg" class="gallery-card" data-cat="petaca" data-lightbox>
+        <img src="images/petaca-dormitorio-matrimonial.jpg" alt="Habitación matrimonial con vista al agua" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">Casita La Petaca</span>
+          <h3 class="gallery-card-title">Dormitorio principal con ventana al río</h3>
+        </div>
+      </a>
+
+      <!-- Item 8: Hamacas Paraguayas -->
+      <a href="images/hamacas-paraguayas-sombra.jpg" class="gallery-card" data-cat="petaca" data-lightbox>
+        <img src="images/hamacas-paraguayas-sombra.jpg" alt="Hamacas paraguayas bajo la casa isleña" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">Casita La Petaca</span>
+          <h3 class="gallery-card-title">Galería de sombra con hamacas paraguayas</h3>
+        </div>
+      </a>
+
+      <!-- Item 9: Canoa en el Río -->
+      <a href="images/canoa-rio-experiencia.jpg" class="gallery-card" data-cat="rio" data-lightbox>
+        <img src="images/canoa-rio-experiencia.jpg" alt="Remando en canoa canadiense por el Arroyo Segunda Hermana" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">Río & Canoas</span>
+          <h3 class="gallery-card-title">Navegación libre en canoa canadiense</h3>
+        </div>
+      </a>
+
+      <!-- Item 10: Muelle y Río Real -->
+      <a href="images/rio-muelle-selva-real.jpg" class="gallery-card" data-cat="rio" data-lightbox>
+        <img src="images/rio-muelle-selva-real.jpg" alt="Muelle privado y vegetación de selva" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">Río & Canoas</span>
+          <h3 class="gallery-card-title">Muelle privado sobre el arroyo calmo</h3>
+        </div>
+      </a>
+
+      <!-- Item 11: Canoas en el Muelle -->
+      <a href="images/canoas-muelle.jpg" class="gallery-card" data-cat="rio" data-lightbox>
+        <img src="images/canoas-muelle.jpg" alt="Canoas amarradas en el muelle de madera" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">Río & Canoas</span>
+          <h3 class="gallery-card-title">Embarcaciones listas para usar con salvavidas</h3>
+        </div>
+      </a>
+
+      <!-- Item 12: Muelle al Atardecer -->
+      <a href="images/muelle-atardecer.jpg" class="gallery-card" data-cat="rio" data-lightbox>
+        <img src="images/muelle-atardecer.jpg" alt="Atardecer dorado sobre las aguas del Delta" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">Río & Canoas</span>
+          <h3 class="gallery-card-title">Tardes de mate y contemplación en el muelle</h3>
+        </div>
+      </a>
+
+      <!-- Item 13: Fogonero Nocturno -->
+      <a href="images/fogonero-nocturno.jpg" class="gallery-card" data-cat="noche" data-lightbox>
+        <img src="images/fogonero-nocturno.jpg" alt="Fogonero a leña nocturno" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">Fogonero & Noche</span>
+          <h3 class="gallery-card-title">Fuego a leña y charlas bajo las estrellas</h3>
+        </div>
+      </a>
+
+      <!-- Item 14: Fogonero Cielo Estrellado -->
+      <a href="images/fogonero-estrellas.jpg" class="gallery-card" data-cat="noche" data-lightbox>
+        <img src="images/fogonero-estrellas.jpg" alt="Noche mágica con brasas encendidas" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">Fogonero & Noche</span>
+          <h3 class="gallery-card-title">Noche isleña sin contaminación lumínica</h3>
+        </div>
+      </a>
+
+      <!-- Item 15: Senderos del Parque -->
+      <a href="images/selva-parque-senderos.jpg" class="gallery-card" data-cat="rio" data-lightbox>
+        <img src="images/selva-parque-senderos.jpg" alt="Senderos y vegetación del monte de 1 hectárea" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span class="gallery-card-cat">Río & Canoas</span>
+          <h3 class="gallery-card-title">Más de 1 hectárea de parque silvestre protegido</h3>
+        </div>
+      </a>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="index.html#reservas" class="btn btn-whatsapp" style="font-size: 1rem; padding: 0.95rem 2rem;">
+        ¿Te gustó lo que viste? Consultar Disponibilidad por WhatsApp →
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border: none; padding: 0;">
+      <span>© 2026 Cabañas de la Selva · Arroyo Segunda Hermana, Tigre.</span>
+      <span class="ruco-credit">Diseño por <strong>Ruco</strong> (ruco.ar)</span>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-hidden="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar foto">&times;</button>
+      <img src="" alt="Foto ampliada" class="lightbox-img" id="lightbox-img">
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Filtro interactivo de la galería
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryCards = document.querySelectorAll('.gallery-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        galleryCards.forEach(card => {
+          if (filter === 'all' || card.dataset.cat === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
